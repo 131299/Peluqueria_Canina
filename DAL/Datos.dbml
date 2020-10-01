@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Bd_Analisis" Class="DatosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-GOBP0NAK;Initial Catalog=Bd_Analisis;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="Bd_AnalisisConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.EliminarCategoria" Method="EliminarCategoria">
+    <Parameter Name="codCategoria" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarCategoria" Method="ActualizarCategoria">
+    <Parameter Name="codCategoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="foto" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ConsultarCategoria" Method="ConsultarCategoria">
+    <Parameter Name="codCategoria" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultarCategoriaResult">
+      <Column Name="CodigoCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripción" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarCategorias" Method="ConsultarCategorias">
+    <ElementType Name="ConsultarCategoriasResult">
+      <Column Name="CodigoCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripción" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CrearCategoria" Method="CrearCategoria">
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="foto" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="estado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarExpediente" Method="ActualizarExpediente">
+    <Parameter Name="idMascota" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="especie" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="sexo" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="raza" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="color" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fechanacimiento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="alergias" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="enfermedades" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="notas" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="foto" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizaPromocion" Method="ActualizaPromocion">
+    <Parameter Name="codPromocion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Dia" Parameter="dia" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="Precio" Parameter="precio" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CodProducto" Parameter="codProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ActualizarProducto" Method="ActualizarProducto">
+    <Parameter Name="codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="foto" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="marca" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="precio" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="iva" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="stock" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="codProovedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="codCategoria" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AgregarProductos" Method="AgregarProductos">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="descripcion" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="foto" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="marca" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="precio" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="iva" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="stock" Type="System.Int32" DbType="Int" />
+    <Parameter Name="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="codProovedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="codCategoria" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ConsultarExpediente" Method="ConsultarExpediente">
+    <Parameter Name="idMascota" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultarExpedienteResult">
+      <Column Name="IdMascota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Especie" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Raza" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Alergias" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Enfermedades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Notas" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarExpedientes" Method="ConsultarExpedientes">
+    <ElementType Name="ConsultarExpedientesResult">
+      <Column Name="IdMascota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Especie" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Raza" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Alergias" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Enfermedades" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Notas" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarProducto" Method="ConsultarProducto">
+    <Parameter Name="codProducto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultarProductoResult">
+      <Column Name="CodigoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripción" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Iva" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarProductos" Method="ConsultarProductos">
+    <ElementType Name="ConsultarProductosResult">
+      <Column Name="CodigoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripción" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Iva" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarPromocion" Method="ConsultarPromocion">
+    <Parameter Name="codPromocion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="ConsultarPromocionResult">
+      <Column Name="CodigoPromocion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Dia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ConsultarPromociones" Method="ConsultarPromociones">
+    <ElementType Name="ConsultarPromocionesResult">
+      <Column Name="CodigoPromocion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Dia" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CrearExpediente" Method="CrearExpediente">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="especie" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="sexo" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="raza" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="color" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="fechanacimiento" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="alergias" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="enfermedades" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="notas" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="foto" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CrearPromocion" Method="CrearPromocion">
+    <Parameter Name="FechaInicio" Parameter="fechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="FechaFin" Parameter="fechaFin" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Dia" Parameter="dia" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="Precio" Parameter="precio" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CodProducto" Parameter="codProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarExpediente" Method="EliminarExpediente">
+    <Parameter Name="idMascota" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarProducto" Method="EliminarProducto">
+    <Parameter Name="codProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarPromocion" Method="EliminarPromocion">
+    <Parameter Name="codPromocion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ValidarUsuario" Method="ValidarUsuario">
+    <Parameter Name="correo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="clave" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="ValidarUsuarioResult">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Teléfono" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Clave" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Dirección" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="CodigoRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
