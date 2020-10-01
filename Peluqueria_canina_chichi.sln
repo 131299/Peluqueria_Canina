@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Peluqueria_canina_chichi", "Peluqueria_canina_chichi\Peluqueria_canina_chichi.csproj", "{73C5B7BB-619E-4F4A-8666-E791B863CD30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{499BBFC8-1D10-4364-A5DA-A64BB143CED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B458E838-23E5-4169-9564-5269B4121C64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73C5B7BB-619E-4F4A-8666-E791B863CD30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C5B7BB-619E-4F4A-8666-E791B863CD30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C5B7BB-619E-4F4A-8666-E791B863CD30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C5B7BB-619E-4F4A-8666-E791B863CD30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{499BBFC8-1D10-4364-A5DA-A64BB143CED1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{499BBFC8-1D10-4364-A5DA-A64BB143CED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{499BBFC8-1D10-4364-A5DA-A64BB143CED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{499BBFC8-1D10-4364-A5DA-A64BB143CED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B458E838-23E5-4169-9564-5269B4121C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B458E838-23E5-4169-9564-5269B4121C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B458E838-23E5-4169-9564-5269B4121C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B458E838-23E5-4169-9564-5269B4121C64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68C8D75A-33E0-4A5F-BE49-51F0308773E0}
+	EndGlobalSection
+EndGlobal
