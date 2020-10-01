@@ -1,0 +1,45 @@
+﻿@model Peluqueria_canina_chichi.Models.Login
+
+
+@{
+    Layout = null;
+}
+
+<style>
+    .form-signin {
+        margin: 0 auto;
+        max-width: 330px;
+        padding: 15px;
+    }
+</style>
+<div class="container-fluid">
+    @using (Html.BeginForm("Login", "Login"/*, FormMethod.Post, new { @class = "form-signin"*/@*, role = "form"*@/* }*/))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <h2 class="form-signin-heading">Ingrese los Datos</h2>
+        <div class="form-group form-header input-group-lg">
+            @Html.TextBoxFor(m => m.Correo, new { @class = "form-control", placeholder = "Usuario", type = "email", tabindex = 1 })
+            @Html.ValidationMessageFor(m => m.Correo, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group form-header input-group-lg">
+            @Html.PasswordFor(m => m.Clave, new { @class = "form-control", placeholder = "Contraseña", tabindex = 2 })
+            @Html.ValidationMessageFor(m => m.Clave, "", new { @class = "text-danger" })
+        </div>
+        <div class="remember">
+            @Html.CheckBoxFor(m => m.Recordarme, htmlAttributes: new { @id = "login-remember", tabindex = 3 })
+            @Html.LabelFor(m => m.Recordarme)
+        </div>
+        <button type="submit" id="LoginButton" class="btn btn-lg btn-success btn-block" tabindex="4">Ingresar</button>
+    }
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+<!-- /.container-fluid -->
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,70 @@
+﻿
+@model IEnumerable<Peluqueria_canina_chichi.Models.Promociones>
+
+@{
+    ViewBag.Title = "Promociones";
+}
+
+<h2>Promociones</h2>
+
+<p>
+    @Html.ActionLink("Nueva Promocion", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodPromocion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodProducto)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CodPromocion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaInicio)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FechaFin)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Dia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Precio)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Estado)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CodProducto)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Editar", new { id = item.CodPromocion }) |
+        @Html.ActionLink("Eliminar", "Eliminar", new { id = item.CodPromocion})
+    </td>
+</tr>
+    }
+
+</table>
